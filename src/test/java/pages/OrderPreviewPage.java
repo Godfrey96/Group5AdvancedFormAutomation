@@ -15,11 +15,20 @@ public class OrderPreviewPage {
     @FindBy(id = "device-summary-title")
     WebElement deviceSummaryTitleLabel;
 
+    @FindBy(id = "shipping-option-standard")
+    WebElement shippingOptionStandard;
+
     @FindBy(id = "shipping-option-express")
     WebElement shippingOptionExpress;
 
+    @FindBy(id = "warranty-option-none")
+    WebElement warrantyOptionNone;
+
     @FindBy(id = "warranty-option-1yr")
     WebElement warrantyOptionOneYear;
+
+    @FindBy(id = "warranty-option-2yr")
+    WebElement warrantyOptionTwoYear;
 
     @FindBy(id = "discount-code")
     WebElement discountCode;
@@ -60,14 +69,37 @@ public class OrderPreviewPage {
         deviceSummaryTitleLabel.isDisplayed();
     }
 
-    public void selectShippingMethod() {
+    public void selectShippingMethod(String storageValue) {
         new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(shippingOptionExpress));
-        shippingOptionExpress.click();
+
+        switch (storageValue.trim()) {
+            case "Standard":
+                shippingOptionStandard.click();
+                break;
+            case "Express":
+                shippingOptionExpress.click();
+                break;
+            default:
+                throw new RuntimeException("Invalid shipping method value from Excel: " + storageValue);
+        }
     }
 
-    public void selectWarranty() {
+    public void selectWarrantyOption(String storageValue) {
         new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(warrantyOptionOneYear));
-        warrantyOptionOneYear.click();
+
+        switch (storageValue.trim()) {
+            case "None":
+                warrantyOptionNone.click();
+                break;
+            case "1 Year":
+                warrantyOptionOneYear.click();
+                break;
+            case "2 Year":
+                warrantyOptionTwoYear.click();
+                break;
+            default:
+                throw new RuntimeException("Invalid warranty value from Excel: " + storageValue);
+        }
     }
 
     public void enterDiscountCode(String discount) {
