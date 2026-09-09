@@ -1,7 +1,9 @@
 package tests;
 
 import baseTests.BaseTest;
+import org.openqa.selenium.io.Read;
 import org.testng.annotations.Test;
+import utils.ReadData;
 
 public class InventoryTest extends BaseTest {
 
@@ -25,42 +27,37 @@ public class InventoryTest extends BaseTest {
 
     @Test(priority = 8)
     public void selectDeviceTypeDropdown() throws InterruptedException {
-        inventoryPage.selectDeviceType("Phone");
+        inventoryPage.selectDeviceType(ReadData.deviceType);
         Thread.sleep(2000);
     }
 
     @Test(priority = 9)
     public void selectBrandDropdown() throws InterruptedException {
-        inventoryPage.selectBrand("Apple");
+        inventoryPage.selectBrand(ReadData.brand);
         Thread.sleep(2000);
     }
 
     @Test(priority = 10)
-//    public void selectStorageSizeGB() throws InterruptedException {
-//        inventoryPage.selectStorageSizeGBByValue("128GB");
-//        Thread.sleep(2000);
-//    }
     public void selectStorageGB() throws InterruptedException {
-        inventoryPage.selectStorage128GB();
+        inventoryPage.selectStorage(ReadData.storage);
         Thread.sleep(2000);
     }
 
     @Test(priority = 11)
     public void selectColorDropdown() throws InterruptedException {
-        inventoryPage.selectColor("Blue");
+        inventoryPage.selectColor(ReadData.color);
         Thread.sleep(2000);
     }
 
     @Test(priority = 12)
     public void enterQuantityTest() throws InterruptedException {
-        //inventoryPage.enterQuantity(2);
-        inventoryPage.incrementQuantity(2);
+        inventoryPage.incrementQuantity(ReadData.quantity);
         Thread.sleep(2000);
     }
 
     @Test(priority = 13)
     public void enterDeliveryAddressTest() throws InterruptedException {
-        inventoryPage.enterDeliveryAddress("123 Test Street");
+        inventoryPage.enterDeliveryAddress(ReadData.address);
         Thread.sleep(2000);
     }
 

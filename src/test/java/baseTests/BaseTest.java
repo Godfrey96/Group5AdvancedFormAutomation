@@ -7,6 +7,9 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import pages.*;
 import utils.BrowserFactory;
+import utils.ReadData;
+
+import java.io.IOException;
 
 public class BaseTest {
 
@@ -17,9 +20,10 @@ public class BaseTest {
    protected static LandingPage landingPage;
    protected static InventoryPage inventoryPage;
    protected static OrderPreviewPage orderPreviewPage;
+   //protected static ReadData readData;
 
    @BeforeSuite
-   public void setUpSuite() {
+   public void setUpSuite() throws IOException {
 
     driver = BrowserFactory.launchBrowser("edged","https://ndosisimplifiedautomation.vercel.app/");
 
@@ -28,6 +32,7 @@ public class BaseTest {
     landingPage = PageFactory.initElements(driver, LandingPage.class);
     inventoryPage = PageFactory.initElements(driver, InventoryPage.class);
     orderPreviewPage = PageFactory.initElements(driver, OrderPreviewPage.class);
+
 
    }
 

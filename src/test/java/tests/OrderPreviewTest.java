@@ -1,7 +1,9 @@
 package tests;
 
 import baseTests.BaseTest;
+import org.openqa.selenium.io.Read;
 import org.testng.annotations.Test;
+import utils.ReadData;
 
 public class OrderPreviewTest extends BaseTest {
 
@@ -13,19 +15,19 @@ public class OrderPreviewTest extends BaseTest {
 
     @Test(priority = 22)
     public void clickShippingMethod() throws InterruptedException {
-        orderPreviewPage.selectShippingMethod();
+        orderPreviewPage.selectShippingMethod(ReadData.shippingMethod);
         Thread.sleep(2000);
     }
 
     @Test(priority = 23)
     public void clickWarranty() throws InterruptedException {
-        orderPreviewPage.selectWarranty();
+        orderPreviewPage.selectWarrantyOption(ReadData.warranty);
         Thread.sleep(2000);
     }
 
     @Test(priority = 24)
     public void enterDiscountCodeTest() throws InterruptedException {
-        orderPreviewPage.enterDiscountCode("SAVE10");
+        orderPreviewPage.enterDiscountCode(ReadData.discountCode);
         Thread.sleep(2000);
     }
 

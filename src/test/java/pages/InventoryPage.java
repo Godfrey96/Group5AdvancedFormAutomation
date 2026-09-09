@@ -21,8 +21,14 @@ public class InventoryPage {
     @FindBy(id = "brand")
     WebElement brandDropdown;
 
+    @FindBy(id = "storage-64GB")
+    WebElement storage64GB;
+
     @FindBy(id = "storage-128GB")
     WebElement storage128GB;
+
+    @FindBy(id = "storage-256GB")
+    WebElement storage256GB;
 
     @FindBy(xpath = "//*[@id=\"inventory-form-grid\"]/div[4]/div")
     private List<WebElement> storageGroup;
@@ -68,22 +74,27 @@ public class InventoryPage {
         select.selectByVisibleText(brand);
     }
 
-//    public void selectStorageSizeGBByValue(String targetValue) {
-//        for (WebElement radioButton : storageGroup) {
-//            String valueAttr = radioButton.getAttribute("value"); //
-//
-//            if (valueAttr != null && valueAttr.equalsIgnoreCase(targetValue)) {
-//                if (!radioButton.isSelected()) {
-//                    radioButton.click(); //
-//                }
-//                break; // Exit loop once the target is found and clicked
-//            }
-//        }
+//    public void selectStorage128GB() {
+//        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(storage128GB));
+//        storage128GB.click();
 //    }
 
-    public void selectStorage128GB() {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(brandDropdown));
-        storage128GB.click();
+    public void selectStorage(String storageValue) {
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(storage128GB));
+
+        switch (storageValue.trim()) {
+            case "64GB":
+                storage64GB.click();
+                break;
+            case "128GB":
+                storage128GB.click();
+                break;
+            case "256GB":
+                storage256GB.click();
+                break;
+            default:
+                throw new RuntimeException("Invalid storage value from Excel: " + storageValue);
+        }
     }
 
     public void selectColor(String color) {
@@ -91,14 +102,9 @@ public class InventoryPage {
         select.selectByVisibleText(color);
     }
 
-//    public void enterQuantity(int qty) {
-//        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(quantityInput));
-//        quantityInput.sendKeys(String.valueOf(qty));
-//    }
-
     public void incrementQuantity(int steps) {
         new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(quantityInput));
-        quantityInput.click(); // Focus on the field
+        quantityInput.click();
         for (int i = 0; i < steps; i++) {
             quantityInput.sendKeys(Keys.ARROW_UP);
         }
