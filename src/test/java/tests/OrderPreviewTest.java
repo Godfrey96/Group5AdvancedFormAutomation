@@ -8,39 +8,33 @@ import utils.ReadData;
 public class OrderPreviewTest extends BaseTest {
 
     @Test(priority = 21)
-    public void verifyDeviceSummary() throws InterruptedException {
+    public void verifyDeviceSummary() {
         orderPreviewPage.showDeviceSummary();
-        Thread.sleep(2000);
     }
 
     @Test(priority = 22)
-    public void clickShippingMethod() throws InterruptedException {
+    public void clickShippingMethod() {
         orderPreviewPage.selectShippingMethod(ReadData.shippingMethod);
-        Thread.sleep(2000);
     }
 
     @Test(priority = 23)
-    public void clickWarranty() throws InterruptedException {
+    public void clickWarranty() {
         orderPreviewPage.selectWarrantyOption(ReadData.warranty);
-        Thread.sleep(2000);
     }
 
     @Test(priority = 24)
-    public void enterDiscountCodeTest() throws InterruptedException {
+    public void enterDiscountCodeTest() {
         orderPreviewPage.enterDiscountCode(ReadData.discountCode);
-        Thread.sleep(2000);
     }
 
     @Test(priority = 25)
-    public void clickApplyDiscountButtonTest() throws InterruptedException {
+    public void clickApplyDiscountButtonTest() {
         orderPreviewPage.clickApplyDiscountBtn();
-        Thread.sleep(2000);
     }
 
     @Test(priority = 26)
-    public void verifyDiscountFeedbackText() throws InterruptedException {
+    public void verifyDiscountFeedbackText() {
         orderPreviewPage.showDiscountFeedbackText();;
-        Thread.sleep(2000);
     }
 
     @Test(priority = 27)
@@ -49,29 +43,25 @@ public class OrderPreviewTest extends BaseTest {
     }
 
     @Test(priority = 28)
-    public void verifyBreakDownSummaryTest() throws InterruptedException {
+    public void verifyBreakDownSummaryTest() {
         orderPreviewPage.showPriceBreakDown();
-        Thread.sleep(2000);
     }
 
     @Test(priority = 29)
-    public void clickConfirmPurchaseTest() throws InterruptedException {
+    public void clickConfirmPurchaseTest() {
         orderPreviewPage.clickConfirmPurchaseBtn();
-        Thread.sleep(2000);
-        takesScreenshots.takesSnapShot(driver, "Inventory Requirements");
+        takesScreenshots.takesSnapShot(driver, "Inventory Extras");
     }
 
     @Test(priority = 30)
-    public void verifyOrderModalTest() throws InterruptedException {
+    public void verifyOrderModalTest() {
         orderPreviewPage.showOrderSuccessfullyModal();
-        Thread.sleep(2000);
         takesScreenshots.takesSnapShot(driver, "Order Successful");
     }
 
     @Test(priority = 31)
-    public void clickViewInvoiceButtonTest() throws InterruptedException {
+    public void clickViewInvoiceButtonTest() {
         orderPreviewPage.clickViewInvoiceBtn();
-        Thread.sleep(2000);
     }
 
     @Test(priority = 32)

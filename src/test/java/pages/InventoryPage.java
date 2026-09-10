@@ -30,9 +30,6 @@ public class InventoryPage {
     @FindBy(id = "storage-256GB")
     WebElement storage256GB;
 
-    @FindBy(xpath = "//*[@id=\"inventory-form-grid\"]/div[4]/div")
-    private List<WebElement> storageGroup;
-
     @FindBy(id = "color")
     WebElement colorDropdown;
 
@@ -65,22 +62,16 @@ public class InventoryPage {
     }
 
     public void selectDeviceType(String deviceType) {
-        Select select = new Select(new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(deviceTypeDropdown)));
+        Select select = new Select(deviceTypeDropdown);
         select.selectByVisibleText(deviceType);
     }
 
     public void selectBrand(String brand) {
-        Select select = new Select(new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(brandDropdown)));
+        Select select = new Select(brandDropdown);
         select.selectByVisibleText(brand);
     }
 
-//    public void selectStorage128GB() {
-//        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(storage128GB));
-//        storage128GB.click();
-//    }
-
     public void selectStorage(String storageValue) {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(storage128GB));
 
         switch (storageValue.trim()) {
             case "64GB":
@@ -98,12 +89,11 @@ public class InventoryPage {
     }
 
     public void selectColor(String color) {
-        Select select = new Select(new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.elementToBeClickable(colorDropdown)));
+        Select select = new Select(colorDropdown);
         select.selectByVisibleText(color);
     }
 
     public void incrementQuantity(int steps) {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(quantityInput));
         quantityInput.click();
         for (int i = 0; i < steps; i++) {
             quantityInput.sendKeys(Keys.ARROW_UP);
@@ -111,37 +101,30 @@ public class InventoryPage {
     }
 
     public void enterDeliveryAddress(String address) {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(deliveryAddress));
         deliveryAddress.sendKeys(address);
     }
 
     public void VerifyCurrentPriceValue() {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(currentPriceValue));
         currentPriceValue.isDisplayed();
     }
 
     public void verifyQuantitySummary() {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(quantitySummary));
         quantitySummary.isDisplayed();
     }
 
     public void verifySubtotal() {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(subtotal));
         subtotal.isDisplayed();
     }
 
     public void verifyPricingNote() {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(pricingNote));
         pricingNote.isDisplayed();
     }
 
     public void verifyPreviewSection() {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(previewSection));
         previewSection.isDisplayed();
     }
 
     public void clickInventoryNextButton() {
-        //new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(inventoryNextButton));
         inventoryNextButton.click();
     }
 

@@ -65,12 +65,10 @@ public class OrderPreviewPage {
     }
 
     public void showDeviceSummary() {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(deviceSummaryTitleLabel));
         deviceSummaryTitleLabel.isDisplayed();
     }
 
     public void selectShippingMethod(String storageValue) {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(shippingOptionExpress));
 
         switch (storageValue.trim()) {
             case "Standard":
@@ -85,7 +83,6 @@ public class OrderPreviewPage {
     }
 
     public void selectWarrantyOption(String storageValue) {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(warrantyOptionOneYear));
 
         switch (storageValue.trim()) {
             case "None":
@@ -103,54 +100,43 @@ public class OrderPreviewPage {
     }
 
     public void enterDiscountCode(String discount) {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(discountCode));
         discountCode.sendKeys(discount);
     }
 
     public void clickApplyDiscountBtn() {
-        //new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(applyDiscountBtn));
         applyDiscountBtn.click();
     }
 
     public void showDiscountFeedbackText() {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(discountFeedbackText));
         discountFeedbackText.isDisplayed();
     }
 
     public void showPreviewSummary() {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(preview));
         preview.isDisplayed();
     }
 
     public void showPriceBreakDown() {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(priceBreakDown));
         priceBreakDown.isDisplayed();
     }
 
     public void clickConfirmPurchaseBtn() {
-        //new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(confirmPurchaseBtn));
         confirmPurchaseBtn.click();
     }
 
     public void showOrderSuccessfullyModal() {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(orderSuccessfullyModal));
         orderSuccessfullyModal.isDisplayed();
     }
 
     public void clickViewInvoiceBtn() {
-        //new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(viewInvoiceBtn));
         viewInvoiceBtn.click();
     }
 
     public void showViewInvoiceHistoryModal() {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(viewInvoiceHistoryModal));
         viewInvoiceHistoryModal.isDisplayed();
     }
 
     public void clickViewHistoryBtn() {
-        //new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(viewHistoryBtn));
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(viewInvoiceHistoryModal));
         viewHistoryBtn.click();
     }
-
-
 }

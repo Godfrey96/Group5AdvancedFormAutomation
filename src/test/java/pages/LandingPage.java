@@ -34,6 +34,7 @@ public class LandingPage {
     }
 
     public void clickLearnNavButtonDropdown() {
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(myLearningTab));
         learnNavButton.click();
     }
 
