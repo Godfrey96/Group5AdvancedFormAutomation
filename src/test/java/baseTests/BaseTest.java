@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeSuite;
 import pages.*;
 import utils.BrowserFactory;
 import utils.ReadData;
+import utils.TakesScreenshots;
 
 import java.io.IOException;
 
@@ -20,6 +21,7 @@ public class BaseTest {
    protected static LandingPage landingPage;
    protected static InventoryPage inventoryPage;
    protected static OrderPreviewPage orderPreviewPage;
+   protected static TakesScreenshots takesScreenshots;
    //protected static ReadData readData;
 
    @BeforeSuite
@@ -32,6 +34,7 @@ public class BaseTest {
     landingPage = PageFactory.initElements(driver, LandingPage.class);
     inventoryPage = PageFactory.initElements(driver, InventoryPage.class);
     orderPreviewPage = PageFactory.initElements(driver, OrderPreviewPage.class);
+    takesScreenshots = new TakesScreenshots();
 
 
    }

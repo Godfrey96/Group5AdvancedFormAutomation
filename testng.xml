@@ -3,6 +3,10 @@
 
 <suite name="All Test Suite" thread-count="1" verbose="2">
 
+    <listeners>
+        <listener class-name="extendReports.Listener"></listener>
+    </listeners>
+
     <test name="ALl Tests" preserve-order="true">
         <classes>
             <class name="tests.LoginTest" />
