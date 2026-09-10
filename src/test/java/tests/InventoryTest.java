@@ -8,93 +8,78 @@ import utils.ReadData;
 public class InventoryTest extends BaseTest {
 
     @Test(priority = 5)
-    public void clickLearnNavButton() throws InterruptedException {
+    public void clickLearnNavButton() {
         landingPage.clickLearnNavButtonDropdown();
-        Thread.sleep(2000);
     }
 
     @Test(priority = 6)
-    public void clickLearningMaterialsButton() throws InterruptedException {
+    public void clickLearningMaterialsButton() {
         landingPage.learningMaterialsButton();
-        Thread.sleep(2000);
     }
 
     @Test(priority = 7)
-    public void clickWebAutomationAdvanceFormTab() throws InterruptedException {
+    public void clickWebAutomationAdvanceFormTab() {
         landingPage.webAutomationAdvanceFormTab();
-        Thread.sleep(2000);
     }
 
     @Test(priority = 8)
-    public void selectDeviceTypeDropdown() throws InterruptedException {
+    public void selectDeviceTypeDropdown() {
         inventoryPage.selectDeviceType(ReadData.deviceType);
-        Thread.sleep(2000);
     }
 
     @Test(priority = 9)
-    public void selectBrandDropdown() throws InterruptedException {
+    public void selectBrandDropdown() {
         inventoryPage.selectBrand(ReadData.brand);
-        Thread.sleep(2000);
     }
 
     @Test(priority = 10)
-    public void selectStorageGB() throws InterruptedException {
+    public void selectStorageGB() {
         inventoryPage.selectStorage(ReadData.storage);
-        Thread.sleep(2000);
     }
 
     @Test(priority = 11)
-    public void selectColorDropdown() throws InterruptedException {
+    public void selectColorDropdown() {
         inventoryPage.selectColor(ReadData.color);
-        Thread.sleep(2000);
     }
 
     @Test(priority = 12)
-    public void enterQuantityTest() throws InterruptedException {
+    public void enterQuantityTest() {
         inventoryPage.incrementQuantity(ReadData.quantity);
-        Thread.sleep(2000);
     }
 
     @Test(priority = 13)
-    public void enterDeliveryAddressTest() throws InterruptedException {
+    public void enterDeliveryAddressTest() {
         inventoryPage.enterDeliveryAddress(ReadData.address);
-        Thread.sleep(2000);
     }
 
     @Test(priority = 14)
-    public void VerifyCurrentPriceValueTest() throws InterruptedException {
+    public void VerifyCurrentPriceValueTest() {
         inventoryPage.VerifyCurrentPriceValue();
-        Thread.sleep(2000);
     }
 
     @Test(priority = 15)
-    public void verifyQuantitySummaryTest() throws InterruptedException {
+    public void verifyQuantitySummaryTest() {
         inventoryPage.verifyQuantitySummary();
-        Thread.sleep(2000);
     }
 
     @Test(priority = 16)
-    public void verifySubtotalTest() throws InterruptedException {
+    public void verifySubtotalTest() {
         inventoryPage.verifySubtotal();
-        Thread.sleep(2000);
     }
 
     @Test(priority = 18)
-    public void verifyPricingNoteTest() throws InterruptedException {
+    public void verifyPricingNoteTest() {
         inventoryPage.verifyPricingNote();
-        Thread.sleep(2000);
     }
 
     @Test(priority = 19)
-    public void verifyPreviewSectionTest() throws InterruptedException {
+    public void verifyPreviewSectionTest() {
         inventoryPage.verifyPreviewSection();
-        Thread.sleep(2000);
     }
 
     @Test(priority = 20)
-    public void clickInventoryNextButtonTest() throws InterruptedException {
+    public void clickInventoryNextButtonTest() {
         inventoryPage.clickInventoryNextButton();
-        Thread.sleep(2000);
         takesScreenshots.takesSnapShot(driver, "Inventory Form");
     }
 }

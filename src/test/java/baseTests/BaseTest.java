@@ -22,12 +22,11 @@ public class BaseTest {
    protected static InventoryPage inventoryPage;
    protected static OrderPreviewPage orderPreviewPage;
    protected static TakesScreenshots takesScreenshots;
-   //protected static ReadData readData;
 
    @BeforeSuite
-   public void setUpSuite() throws IOException {
+   public void setUpSuite() {
 
-    driver = BrowserFactory.launchBrowser("edged","https://ndosisimplifiedautomation.vercel.app/");
+    driver = BrowserFactory.launchBrowser("edge","https://ndosisimplifiedautomation.vercel.app/");
 
     homePage = PageFactory.initElements(driver, HomePage.class);
     loginPage = PageFactory.initElements(driver, LoginPage.class);
@@ -35,7 +34,6 @@ public class BaseTest {
     inventoryPage = PageFactory.initElements(driver, InventoryPage.class);
     orderPreviewPage = PageFactory.initElements(driver, OrderPreviewPage.class);
     takesScreenshots = new TakesScreenshots();
-
 
    }
 

@@ -14,13 +14,11 @@ public class LoginTest extends BaseTest {
 
     @Test(priority = 1)
     public void enterUsernameTest() {
-        //loginPage.enterUsername("testmogau@gmail.com");
         loginPage.enterUsername(ReadData.username);
     }
 
     @Test(priority = 2)
     public void enterPasswordTest() {
-        //loginPage.enterPassword("@123456789");
         loginPage.enterPassword(ReadData.password);
         takesScreenshots.takesSnapShot(driver, "login page");
     }

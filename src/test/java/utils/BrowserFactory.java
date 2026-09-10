@@ -21,18 +21,17 @@ public class BrowserFactory {
             chromeOptions.addArguments("--headless=new");
             driver = new ChromeDriver(chromeOptions);
         } else if (browserChoice.equalsIgnoreCase("edge")) {
-//            EdgeOptions edgeOptions = new EdgeOptions();
-//            edgeOptions.addArguments("--headless=new");
-//            driver = new EdgeDriver(edgeOptions);
+            EdgeOptions edgeOptions = new EdgeOptions();
+            edgeOptions.addArguments("--headless=new");
+            driver = new EdgeDriver(edgeOptions);
             driver = new EdgeDriver();
-            driver.manage().window().setSize(new Dimension(1920, 1080));
         } else {
             driver = new FirefoxDriver();
         }
 
         driver.manage().window().maximize();
         driver.get(url);
-        //driver.manage().window().setSize(new Dimension(1920,1080));
+        driver.manage().window().setSize(new Dimension(1920,1080));
         return driver;
     }
 
