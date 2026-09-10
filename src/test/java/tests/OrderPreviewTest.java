@@ -58,12 +58,14 @@ public class OrderPreviewTest extends BaseTest {
     public void clickConfirmPurchaseTest() throws InterruptedException {
         orderPreviewPage.clickConfirmPurchaseBtn();
         Thread.sleep(2000);
+        takesScreenshots.takesSnapShot(driver, "Inventory Requirements");
     }
 
     @Test(priority = 30)
     public void verifyOrderModalTest() throws InterruptedException {
         orderPreviewPage.showOrderSuccessfullyModal();
         Thread.sleep(2000);
+        takesScreenshots.takesSnapShot(driver, "Order Successful");
     }
 
     @Test(priority = 31)
@@ -76,11 +78,13 @@ public class OrderPreviewTest extends BaseTest {
     public void verifyViewInvoiceHistoryModalTest() throws InterruptedException {
         orderPreviewPage.showViewInvoiceHistoryModal();
         Thread.sleep(2000);
+        takesScreenshots.takesSnapShot(driver, "invoice history");
     }
 
     @Test(priority = 33)
     public void clickViewHistoryButtonTest() throws InterruptedException {
         orderPreviewPage.clickViewHistoryBtn();
         Thread.sleep(2000);
+        takesScreenshots.takesSnapShot(driver, "view history");
     }
 }

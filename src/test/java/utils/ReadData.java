@@ -58,15 +58,15 @@ public class ReadData {
     public static String warranty = extrasDetailsSheet.getRow(1).getCell(1).getStringCellValue();
     public static String discountCode = extrasDetailsSheet.getRow(1).getCell(2).getStringCellValue();
 
-    @Test
-    public void showDataTest() {
-        System.out.println("DeviceType: " + deviceType);
-        System.out.println("Brand: " + brand);
-        System.out.println("Storage: " + storage);
-        System.out.println("Color: " + color);
-        System.out.println("Quantity: " + quantity);
-        System.out.println("Address: " + address);
-    }
+//    @Test
+//    public void showDataTest() {
+//        System.out.println("DeviceType: " + deviceType);
+//        System.out.println("Brand: " + brand);
+//        System.out.println("Storage: " + storage);
+//        System.out.println("Color: " + color);
+//        System.out.println("Quantity: " + quantity);
+//        System.out.println("Address: " + address);
+//    }
 
 //    public static String wrong = sheet.getRow(3).getCell(0).getStringCellValue();
 //    public static String wrongpass = sheet.getRow(2).getCell(1).getStringCellValue();

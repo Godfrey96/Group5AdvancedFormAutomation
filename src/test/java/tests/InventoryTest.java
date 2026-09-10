@@ -95,5 +95,6 @@ public class InventoryTest extends BaseTest {
     public void clickInventoryNextButtonTest() throws InterruptedException {
         inventoryPage.clickInventoryNextButton();
         Thread.sleep(2000);
+        takesScreenshots.takesSnapShot(driver, "Inventory Form");
     }
 }
