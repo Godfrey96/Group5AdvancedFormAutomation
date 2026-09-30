@@ -24,7 +24,6 @@ public class BrowserFactory {
             EdgeOptions edgeOptions = new EdgeOptions();
             edgeOptions.addArguments("--headless=new");
             driver = new EdgeDriver(edgeOptions);
-            driver = new EdgeDriver();
         } else {
             driver = new FirefoxDriver();
         }
